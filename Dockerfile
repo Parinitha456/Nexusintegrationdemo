@@ -1,2 +1,4 @@
-FROM tomcat:8.0.20-jre8
-COPY target/nexusintegrationdemoproj-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/mavenadd.war
+FROM openjdk:8
+EXPOSE 8080
+ADD target/nexusintegrationdemoproj.war	docker-jenkins-integration-sample.war
+ENTRYPOINT ["java","-war","/docker-jenkins-integration-sample.war"]
